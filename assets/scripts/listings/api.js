@@ -2,7 +2,7 @@
 const config = require('../config.js')
 const store = require('../store.js')
 
-const getListing = (inputData) => {
+const getListing = (listingData) => {
   return $.ajax({
     method: 'GET',
     url: config.apiUrl + '/listings',
@@ -11,11 +11,11 @@ const getListing = (inputData) => {
       Authorization: `Token token=${store.user.token}`
     },
     contentType: 'application/json',
-    data: JSON.stringify(inputData)
+    data: JSON.stringify(listingData)
   })
 }
 
-const createListing = (inputData) => {
+const createListing = (listingData) => {
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/listings',
@@ -23,7 +23,8 @@ const createListing = (inputData) => {
       Authorization: `Token token=${store.user.token}`
     },
     contentType: 'application/json',
-    data: JSON.stringify(inputData)
+    data: JSON.stringify(listingData)
+
   })
 }
 

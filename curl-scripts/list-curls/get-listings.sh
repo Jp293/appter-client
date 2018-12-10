@@ -1,4 +1,4 @@
-curl "https://appter.com/listings" \
+curl "https://appter.herokuapp.com/listings" \
 --include \
 --request GET \
 --header "Content-Type: application/json" \
