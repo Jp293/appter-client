@@ -1,6 +1,6 @@
 'use strict'
 
-const store = require('../store.js')
+// const store = require('../store.js')
 
 const failure = () => {
   $('#message').html('Something went wrong, try again.')

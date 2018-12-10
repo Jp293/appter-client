@@ -42,12 +42,16 @@
   <p id="message"></p>
     <button id='get-listings'> View Listings</button>
 
-    <form id='create-listing'>Create Listing</form>
+    <form id='create-listing'>
       <legend>Create-Listing-Form</legend>
-      <input name="" type="" placeholder="">
-      <input name="" type="" placeholder="">
-      <input name="" type="" placeholder="">
+      <input name="listing[id]" type="number" placeholder="Listing Id">
+      <input name="listing[address]" type="text" placeholder="Address">
+      <input name="listing[start_date]" type="datetime" placeholder="Check-In">
+      <input name="listing[end_date]" type="datetime" placeholder="Check-Out">
+      <input name="listing[price_night]" type="number" placeholder="Price Per Night">
       <input type="submit">
+    </form>
+    <!-- See if you can re-use the form  -->
 
     <button id='update-listing'>Update Listing</button>
 
