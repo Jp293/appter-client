@@ -6,28 +6,41 @@ const ui = require('./ui.js')
 
 const onGetListing = (event) => {
   event.preventDefault()
-  api.getGame(getFormFields(event.taget))
+  api.getListing(getFormFields(event.target))
     .then(ui.getListingSuccess)
     .catch(ui.failure)
 }
 const onCreateListing = (event) => {
   event.preventDefault()
   api.createListing(getFormFields(event.target))
-    .then(ui.createListSuccess)
+    .then(ui.createListingSuccess)
     .catch(ui.failure)
 }
-
+const onUpdateListing = (event) => {
+  event.preventDefault()
+  const listingData = getFormFields(event.target)
+  api.updateListing(listingData)
+    .then(() => onGetListing(event))
+    .catch(ui.failure)
+}
+const onDestroyListing = (event) => {
+  event.preventDefault()
+  const listingId = $(event.target).closest('section').data('id')
+  api.destroyListing(listingId)
+    .then(() => onGetListing(event))
+    .catch(ui.failure)
+}
 const listHandlers = () => {
   $('#get-listings').on('click', onGetListing)
   $('#create-listing').on('submit', onCreateListing)
-  // $('#update-listing').on('click', onUpdateListing)
-  // $('destroy-listing').on('click', onDestroyListing)
+  $('.content').on('submit', 'update-listing', onUpdateListing)
+  $('.content').on('click', '.delete-listing', onDestroyListing)
 }
 
 module.exports = {
-  getListing,
-  createListing,
-  // onUpdateListing,
-  // onDestroyListing,
+  onGetListing,
+  onCreateListing,
+  onUpdateListing,
+  onDestroyListing,
   listHandlers
 }

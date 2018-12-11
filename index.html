@@ -14,7 +14,7 @@
     <body>
       <h1>Browser Template</h1>
 
-  <p id="message"></p>
+  <div id="message" class="content"></div>
 
   <form id="sign-up-form">
     <legend>Sign-Up-Form</legend>
@@ -23,14 +23,14 @@
     <input name="credentials[password_confirmation]" type="password" placeholder="password password confirmation">
     <input type="submit">
   </form>
-  <p id="message"></p>
+
   <form id="sign-in-form">
     <legend>Sign-In-Form</legend>
     <input name="credentials[email]" type="text" placeholder="email">
     <input name="credentials[password]" type="password" placeholder="password">
     <input type="submit">
   </form>
-  <p id="message"></p>
+
   <form id="change-password-form" class="hidden">
     <legend>Change Password Form</legend>
     <input name="passwords[old]" type="password" placeholder="old password">
@@ -39,7 +39,6 @@
   </form>
 
   <br>
-  <p id="message"></p>
     <button id='get-listings'> View Listings</button>
 
     <form id='create-listing'>
@@ -50,12 +49,22 @@
       <input name="listing[end_date]" type="datetime" placeholder="Check-Out">
       <input name="listing[price_night]" type="number" placeholder="Price Per Night">
       <input type="submit">
+
     </form>
+
     <!-- See if you can re-use the form  -->
 
-    <button id='update-listing'>Update Listing</button>
+    <!-- <button id='update-listing'>Update Listing</button> -->
 
-    <button id='destroy-listing'>Delete Listing</button>
+    <!-- <legend>Update-Listing-Form</legend> -->
+    <!-- <input name="listing[id]" type="number" placeholder="Listing Id"> -->
+    <!-- <form id='update-listing'>
+    <input name="listing[address]" type="text" placeholder="Address">
+    <input name="listing[start_date]" type="datetime" placeholder="Check-In">
+    <input name="listing[end_date]" type="datetime" placeholder="Check-Out">
+    <input name="listing[price_night]" type="number" placeholder="Price Per Night">
+    <input type="submit">
+  </form> -->
 
   <br>
 

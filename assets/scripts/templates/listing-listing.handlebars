@@ -1,0 +1,51 @@
+{{#each listings as |listing|}}
+  {{log listing}}
+  <!-- {{> partial}}
+  Don't uncomment yet -->
+  <div>
+    <section data-id="{{listing.id}}">
+      <p> {{listing.address}} </p>
+      <p> {{listing.start_date}} </p>
+      <p> {{listing.end_date}} </p>
+      <p> {{listing.price_night}} </p>
+
+  <button data-id="{{listing.id}}" class="btn btn-default delete-listing">Delete Listing</button>
+  <!-- <button data-id="{{listing.id}}" class="btn btn-default update-listing">Update Listing</button> -->
+
+  <!-- Button trigger modal -->
+<button type="button" data-id="{{listing.id}}" class="btn btn-primary update-listing" data-toggle="modal" data-target="#exampleModalCenter">
+  Update Listing
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <form id='update-listing'>
+        <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Update Listing Form</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- <input name="listing[id]" type="number" placeholder="Listing Id"> -->
+
+        <input name="listing[address]" type="text" placeholder="Address">
+        <input name="listing[start_date]" type="datetime" placeholder="Check-In">
+        <input name="listing[end_date]" type="datetime" placeholder="Check-Out">
+        <input name="listing[price_night]" type="number" placeholder="Price Per Night">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <input type="submit" data-id="{{listing.id}}"class="btn btn-primary update-listing"></input>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+  </section>
+  </div>
+
+{{/each}}

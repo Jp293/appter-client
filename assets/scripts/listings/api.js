@@ -28,8 +28,33 @@ const createListing = (listingData) => {
   })
 }
 
+const updateListing = (listingData) => {
+  return $.ajax({
+    method: 'PATCH',
+    url: config.apiUrl + `/listings/${listingData}`,
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    },
+    contentType: 'application/json',
+    data: JSON.stringify(listingData)
+  })
+}
+
+const destroyListing = (listingData) => {
+  return $.ajax({
+    method: 'DELETE',
+    url: config.apiUrl + `/listings/${listingData}`,
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    },
+    contentType: 'application/json',
+    data: JSON.stringify(listingData)
+  })
+}
 module.exports = {
 
   getListing,
-  createListing
+  createListing,
+  updateListing,
+  destroyListing
 }
