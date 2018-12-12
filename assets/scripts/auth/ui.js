@@ -23,6 +23,8 @@ const signInSuccess = function (signInResponse) {
   $('#sign-out-button').removeClass('hidden')
   $('#sign-up-form').addClass('hidden')
   $('#sign-in-form').addClass('hidden')
+  $('#create-listing').removeClass('hidden')
+  $('#get-listings').removeClass('hidden')
   console.log('You signed in sucessfully')
 }
 const changePasswordSuccess = function (changePasswordResponse) {
@@ -40,6 +42,8 @@ const signOutSuccess = function (signOutResponse) {
   $('#sign-out-button').addClass('hidden')
   $('#sign-up-form').removeClass('hidden')
   $('#sign-in-form').removeClass('hidden')
+  $('#create-listing').addClass('hidden')
+  $('#get-listings').addClass('hidden')
 }
 module.exports = {
   signUpSuccess,

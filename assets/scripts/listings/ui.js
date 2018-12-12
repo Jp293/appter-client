@@ -17,12 +17,11 @@ const getListingSuccess = (data) => {
 }
 
 const updateListingSuccess = (data) => {
-  console.log('test', data.listings)
-  const renderContent = renderListingsHandlebars({listings: data.listings})
+  console.log('Test for modal')
+  $('#myModal').modal('hide')
+  $('body').removeClass('modal-open')
+  $('.modal-backdrop').remove()
   $('#message').html('Listing Updated')
-  $('#message').html(renderContent)
-  $('#message').addClass('success-message')
-  $('#message').removeClass('error-message')
 }
 
 const destroyListingSuccess = (destroyListingResponse) => {

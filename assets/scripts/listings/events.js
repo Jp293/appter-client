@@ -1,6 +1,5 @@
 'use strict'
 const getFormFields = require('../../../lib/get-form-fields.js')
-// const store = require('../store.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
 
@@ -15,11 +14,15 @@ const onCreateListing = (event) => {
   api.createListing(getFormFields(event.target))
     .then(ui.createListingSuccess)
     .catch(ui.failure)
+  $(event.target).trigger('reset')
 }
 const onUpdateListing = (event) => {
   event.preventDefault()
   const listingData = getFormFields(event.target)
+  listingData.id = $(event.target).closest('section').data('id')
   api.updateListing(listingData)
+  console.log('test', listingData.id)
+    .then(ui.updateListingSuccess)
     .then(() => onGetListing(event))
     .catch(ui.failure)
 }
@@ -28,12 +31,16 @@ const onDestroyListing = (event) => {
   const listingId = $(event.target).closest('section').data('id')
   api.destroyListing(listingId)
     .then(() => onGetListing(event))
+    .then(ui.destroyListingSuccess)
     .catch(ui.failure)
 }
 const listHandlers = () => {
   $('#get-listings').on('click', onGetListing)
   $('#create-listing').on('submit', onCreateListing)
-  $('.content').on('submit', 'update-listing', onUpdateListing)
+  $('.content').on('click', '.update-listing', () => {
+    $('#myModal').modal('show')
+  })
+  $('.content').on('submit', '.update-listing-form', onUpdateListing)
   $('.content').on('click', '.delete-listing', onDestroyListing)
 }
 

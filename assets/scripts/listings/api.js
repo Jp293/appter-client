@@ -7,7 +7,6 @@ const getListing = (listingData) => {
     method: 'GET',
     url: config.apiUrl + '/listings',
     headers: {
-      // might need to change to store.current_user.token [watch]
       Authorization: `Token token=${store.user.token}`
     },
     contentType: 'application/json',
@@ -29,9 +28,10 @@ const createListing = (listingData) => {
 }
 
 const updateListing = (listingData) => {
+  console.log(listingData)
   return $.ajax({
     method: 'PATCH',
-    url: config.apiUrl + `/listings/${listingData}`,
+    url: config.apiUrl + `/listings/${listingData.id}`,
     headers: {
       Authorization: `Token token=${store.user.token}`
     },
