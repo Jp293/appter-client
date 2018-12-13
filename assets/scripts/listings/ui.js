@@ -9,7 +9,7 @@ const createListingSuccess = (createListingResponse) => {
 }
 
 const getListingSuccess = (data) => {
-  console.log('test', data.listings)
+  // console.log('test', data.listings)
   const renderContent = renderListingsHandlebars({listings: data.listings})
   $('.content').html(renderContent)
   $('#message').addClass('success-message')
@@ -17,8 +17,8 @@ const getListingSuccess = (data) => {
 }
 
 const updateListingSuccess = (data) => {
-  console.log('Test for modal')
-  $('#myModal').modal('hide')
+  console.log('Test for modal ', data)
+  $('#myModal-' + data.id).modal('hide')
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
   $('#message').html('Listing Updated')
@@ -31,6 +31,10 @@ const destroyListingSuccess = (destroyListingResponse) => {
 }
 
 const failure = () => {
+  console.log('fail')
+  $('.modal').modal('hide')
+  $('body').removeClass('modal-open')
+  $('.modal-backdrop').remove()
   $('#message').html('Something went wrong, try again.')
   $('#message').removeClass('success-message')
   $('#message').addClass('error-message')

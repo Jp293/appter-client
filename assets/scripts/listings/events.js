@@ -19,9 +19,10 @@ const onCreateListing = (event) => {
 const onUpdateListing = (event) => {
   event.preventDefault()
   const listingData = getFormFields(event.target)
+  // console.log('data is ', listingData)
+
   listingData.id = $(event.target).closest('section').data('id')
   api.updateListing(listingData)
-  console.log('test', listingData.id)
     .then(ui.updateListingSuccess)
     .then(() => onGetListing(event))
     .catch(ui.failure)
@@ -37,8 +38,9 @@ const onDestroyListing = (event) => {
 const listHandlers = () => {
   $('#get-listings').on('click', onGetListing)
   $('#create-listing').on('submit', onCreateListing)
-  $('.content').on('click', '.update-listing', () => {
-    $('#myModal').modal('show')
+  $('.content').on('click', '.update-listing', (event) => {
+    const id = $(event.target).data('id')
+    $('#myModal-' + id).modal('show')
   })
   $('.content').on('submit', '.update-listing-form', onUpdateListing)
   $('.content').on('click', '.delete-listing', onDestroyListing)

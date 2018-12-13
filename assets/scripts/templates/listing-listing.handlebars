@@ -4,10 +4,15 @@
   Don't uncomment yet -->
   <div>
     <section data-id="{{listing.id}}">
-      <p> {{listing.address}} </p>
-      <p> {{listing.start_date}} </p>
-      <p> {{listing.end_date}} </p>
-      <p> {{listing.price_night}} </p>
+      <p> Address: {{listing.address}} </p>
+      <p> Check-In: {{listing.start_date}} </p>
+      <p> Check-Out: {{listing.end_date}} </p>
+      <p> Price per night: {{listing.price_night}} </p>
+
+      <!-- will work on the code below as an extra feature  -->
+      <!-- <section data-id="{{email}}">
+        <p> User Email: {{email}} </p>
+      </section> -->
 
   <button data-id="{{listing.id}}" class="btn btn-default delete-listing">Delete Listing</button>
   <!-- <button data-id="{{listing.id}}" class="btn btn-default update-listing">Update Listing</button> -->
@@ -18,12 +23,12 @@
 </button>
 
 <!-- Modal -->
-<div class="modal fade content" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade content" id="myModal-{{listing.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <form class='update-listing-form'>
         <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Update Listing Form</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle-{{listing.id}}">Update Listing Form</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
