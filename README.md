@@ -16,9 +16,9 @@
 
 ## Wireframe
 
-![Wireframe Images](https://imgur.com/mnphO7Y)
-![Wireframe Images](https://imgur.com/Ryt4Dw6)
-![Wireframe Images](https://imgur.com/d5pHJvU)
-![Wireframe Images](https://imgur.com/c7jjdQh)
+![Wireframe Images](https://i.imgur.com/mnphO7Y.jpg)
+![Wireframe Images](https://i.imgur.com/Ryt4Dw6.jpg)
+![Wireframe Images](https://i.imgur.com/d5pHJvU.jpg)
+![Wireframe Images](https://i.imgur.com/c7jjdQh.jpg)
 
 ## Future Implementations
