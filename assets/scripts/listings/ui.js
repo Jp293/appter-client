@@ -17,7 +17,7 @@ const getListingSuccess = (data) => {
 }
 
 const updateListingSuccess = (data) => {
-  console.log('Test for modal ', data)
+  // console.log('Test for modal ', data)
   $('#myModal-' + data.id).modal('hide')
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
@@ -31,7 +31,7 @@ const destroyListingSuccess = (destroyListingResponse) => {
 }
 
 const failure = () => {
-  console.log('fail')
+  // console.log('fail')
   $('.modal').modal('hide')
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()

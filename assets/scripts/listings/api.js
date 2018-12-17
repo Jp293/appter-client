@@ -26,7 +26,7 @@ const createListing = (listingData) => {
 }
 
 const updateListing = (listingData) => {
-  console.log(listingData)
+  // console.log(listingData)
   return $.ajax({
     method: 'PATCH',
     url: config.apiUrl + `/listings/${listingData.id}`,
