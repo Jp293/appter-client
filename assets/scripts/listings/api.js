@@ -8,9 +8,7 @@ const getListing = (listingData) => {
     url: config.apiUrl + '/listings',
     headers: {
       Authorization: `Token token=${store.user.token}`
-    },
-    contentType: 'application/json',
-    data: JSON.stringify(listingData)
+    }
   })
 }
 

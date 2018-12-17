@@ -18,7 +18,13 @@
 
 ## User Stories & Wireframe
 
-*
+* After accessing the webpage users can sign-up/create an account which will render a success or error message.
+* Users will be able to sign-in/log-in which will render a success or error message.
+* Users will be able to view other their own and other users' listings by pressing a designated button to view listings.
+* Users will be able to create listings, which accept address, check-in/check-out in dates, price per night as inputs. This action will also render a success or error message.
+* Users will be able to delete only their own listings if desired. This action will also render a success message and an error message (particularly if users try to delete another user's listing.)
+* Users will be able to update their only their own listings. Success and error messages will be rendered.
+* Users will be able to sign-out/log-out. Success and error messages will be rendered in this instance as well. 
 
 ## Wireframe
 
