@@ -35,6 +35,9 @@ const onDestroyListing = (event) => {
     .then(ui.destroyListingSuccess)
     .catch(ui.failure)
 }
+const onCancel = () => {
+  $('.update-listing-form').trigger('reset')
+}
 const listHandlers = () => {
   $('#get-listings').on('click', onGetListing)
   $('#create-listing').on('submit', onCreateListing)
@@ -42,6 +45,7 @@ const listHandlers = () => {
     const id = $(event.target).data('id')
     $('#myModal-' + id).modal('show')
   })
+  $('.content').on('hidden.bs.modal', onCancel)
   $('.content').on('submit', '.update-listing-form', onUpdateListing)
   $('.content').on('click', '.delete-listing', onDestroyListing)
 }
