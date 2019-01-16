@@ -25,6 +25,7 @@ const signInSuccess = function (signInResponse) {
   $('#sign-in-form').addClass('hidden')
   $('#create-listing').removeClass('hidden')
   $('#get-listings').removeClass('hidden')
+  $('#create-guest-form').removeClass('hidden')
   // console.log('You signed in sucessfully')
 }
 const changePasswordSuccess = function (changePasswordResponse) {
@@ -44,6 +45,7 @@ const signOutSuccess = function (signOutResponse) {
   $('#sign-in-form').removeClass('hidden')
   $('#create-listing').addClass('hidden')
   $('#get-listings').addClass('hidden')
+  $('#create-guest-form').addClass('hidden')
 }
 module.exports = {
   signUpSuccess,
