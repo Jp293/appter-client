@@ -19,6 +19,7 @@ const onCreateGuest = (event) => {
 
 const onDestroyGuest = (event) => {
   event.preventDefault()
+  // Closest section id becomes the guest id.
   const guestId = $(event.target).closest('section').data('id')
   api.destroyGuest(guestId)
     .then(() => onGetGuest(event))

@@ -20,7 +20,7 @@ const onUpdateListing = (event) => {
   event.preventDefault()
   const listingData = getFormFields(event.target)
   // console.log('data is ', listingData)
-
+  // Closest section id becomes the guest id.
   listingData.id = $(event.target).closest('section').data('id')
   api.updateListing(listingData)
     .then(ui.updateListingSuccess)
@@ -29,6 +29,7 @@ const onUpdateListing = (event) => {
 }
 const onDestroyListing = (event) => {
   event.preventDefault()
+  // closest section id becomes the guest id.
   const listingId = $(event.target).closest('section').data('id')
   api.destroyListing(listingId)
     .then(() => onGetListing(event))

@@ -26,6 +26,7 @@ const createGuest = (guestData) => {
 }
 
 const destroyGuest = (guestData) => {
+  console.log(guestData)
   return $.ajax({
     method: 'DELETE',
     url: config.apiUrl + `/listings/${guestData}`,

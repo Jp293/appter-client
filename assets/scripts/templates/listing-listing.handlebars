@@ -9,12 +9,18 @@
       <p> Check-In: {{listing.start_date}} </p>
       <p> Check-Out: {{listing.end_date}} </p>
       <p> Price per night: {{listing.price_night}} </p>
-      <!-- The line below was an attempt to remedy the current issue but not sure on how to proceed. -->
-      <p> Guests: id: {{guest.listing_id}} First Name: {{guest.first_name}} Last Name: {{guest.last_name}} </p>
+
+      {{#each listing.guests as |guest|}}
+       {{log guest}}
+
+       <div>
+         <section data-id="{{guest.id}}">
+       <p> Guest: Id: {{guest.id}} First Name: {{guest.first_name}} Last Name: {{guest.last_name}} </p>
+
+     {{/each}}
 
 
-
-  <button data-id="{{listing.id}}" class="btn btn-default get-guests">View Guests</button>
+  <!-- <button data-id="{{listing.id}}" class="btn btn-default get-guests">View Guests</button> -->
   <button data-id="{{listing.id}}" class="btn btn-default delete-guests">Delete Guests</button>
   <button data-id="{{listing.id}}" class="btn btn-primary delete-listing">Delete Listing</button>
 
