@@ -20,16 +20,14 @@
      {{/each}}
 
 
-  <!-- <button data-id="{{listing.id}}" class="btn btn-default get-guests">View Guests</button> -->
-  <button data-id="{{listing.id}}" class="btn btn-default delete-guests">Delete Guests</button>
-  <button data-id="{{listing.id}}" class="btn btn-primary delete-listing">Delete Listing</button>
+  <button data-id="{{listing.id}}" class="btn btn-default delete-guests">Delete Guest(s)</button>
+  <button data-id="{{listing.id}}" class="btn btn-primary delete-listing">Delete Listing(s)</button>
 
 
-  <!-- <button data-id="{{listing.id}}" class="btn btn-default update-listing">Update Listing</button> -->
 
   <!-- Button trigger modal -->
 <button type="button" data-id="{{listing.id}}" class="btn btn-primary update-listing">
-  Update Listing
+  Update Listing(s)
 </button>
 
 <!-- Modal -->
@@ -44,7 +42,6 @@
         </button>
       </div>
       <div class="modal-body">
-        <!-- <input name="listing[id]" type="number" placeholder="Listing Id"> -->
 
         <input name="listing[address]" type="text" placeholder="Address">
         <input name="listing[start_date]" type="text" placeholder="Check-In">
@@ -63,5 +60,6 @@
 </div>
   </section>
   </div>
-
+  {{else}}
+  <p>No listings available please create one first.</p>
 {{/each}}

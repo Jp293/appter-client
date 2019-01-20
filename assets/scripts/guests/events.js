@@ -22,14 +22,12 @@ const onCreateGuest = (event) => {
 
 const onDestroyGuest = (event) => {
   event.preventDefault()
-  // Closest section id becomes the guest id.
   const guestId = $(event.target).closest('.guest-section').data('id')
   const listingId = $(event.target).closest('.listing-section').data('id')
   const data = { guest: { listing_id:
      listingId }}
   console.log($(event.target).closest('.guest-section'))
   api.destroyGuest(guestId, data)
-    // .then(() => api.getGuest(data))
     .then(ui.destroyGuestSuccess)
     .catch(ui.failure)
 }

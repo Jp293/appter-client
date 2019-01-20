@@ -21,7 +21,6 @@ const destroyGuestSuccess = (destroyGuestResponse) => {
 }
 
 const failure = () => {
-  // console.log('fail')
   $('.modal').modal('hide')
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()

@@ -1,6 +1,5 @@
 'use strict'
 
-// const store = require('../store.js')
 const renderListingsHandlebars = require('../templates/listing-listing.handlebars')
 const createListingSuccess = (createListingResponse) => {
   $('#message').html('Listing Created')
@@ -9,17 +8,13 @@ const createListingSuccess = (createListingResponse) => {
 }
 
 const getListingSuccess = (data) => {
-  // console.log('test', data.listings)
   const renderContent = renderListingsHandlebars({listings: data.listings})
   $('.content').html(renderContent)
-  // $('.content').html('No listings created , please create one!')
-  // $('.content').html('No listings created , please create one!', renderContent)
   $('#message').addClass('success-message')
   $('#message').removeClass('error-message')
 }
 
 const updateListingSuccess = (data) => {
-  // console.log('Test for modal ', data)
   $('#myModal-' + data.id).modal('hide')
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
@@ -33,7 +28,6 @@ const destroyListingSuccess = (destroyListingResponse) => {
 }
 
 const failure = () => {
-  // console.log('fail')
   $('.modal').modal('hide')
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
