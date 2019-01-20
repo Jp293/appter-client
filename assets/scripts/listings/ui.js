@@ -12,6 +12,8 @@ const getListingSuccess = (data) => {
   // console.log('test', data.listings)
   const renderContent = renderListingsHandlebars({listings: data.listings})
   $('.content').html(renderContent)
+  // $('.content').html('No listings created , please create one!')
+  // $('.content').html('No listings created , please create one!', renderContent)
   $('#message').addClass('success-message')
   $('#message').removeClass('error-message')
 }

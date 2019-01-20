@@ -3,4 +3,5 @@ curl "https://appter.herokuapp.com/guests/${ID}" \
   --request DELETE \
   --header "Authorization: Token token=${TOKEN}" \
 
+
 echo

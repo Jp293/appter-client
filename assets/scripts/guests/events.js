@@ -5,7 +5,10 @@ const ui = require('./ui.js')
 
 const onGetGuest = (event) => {
   event.preventDefault()
-  api.getGuest(getFormFields(event.target))
+  const listingId = $(event.target).closest('.listing-section').data('id')
+  const data = { guest: { listing_id:
+     listingId }}
+  api.getGuest(data)
     .then(ui.getGuestSuccess)
     .catch(ui.failure)
 }
@@ -20,9 +23,13 @@ const onCreateGuest = (event) => {
 const onDestroyGuest = (event) => {
   event.preventDefault()
   // Closest section id becomes the guest id.
-  const guestId = $(event.target).closest('section').data('id')
-  api.destroyGuest(guestId)
-    .then(() => onGetGuest(event))
+  const guestId = $(event.target).closest('.guest-section').data('id')
+  const listingId = $(event.target).closest('.listing-section').data('id')
+  const data = { guest: { listing_id:
+     listingId }}
+  console.log($(event.target).closest('.guest-section'))
+  api.destroyGuest(guestId, data)
+    // .then(() => api.getGuest(data))
     .then(ui.destroyGuestSuccess)
     .catch(ui.failure)
 }

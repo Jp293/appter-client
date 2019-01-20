@@ -3,6 +3,7 @@ const config = require('../config.js')
 const store = require('../store.js')
 
 const getListing = (listingData) => {
+  console.log(listingData)
   return $.ajax({
     method: 'GET',
     url: config.apiUrl + '/listings',

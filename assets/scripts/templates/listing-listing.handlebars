@@ -3,7 +3,7 @@
   <!-- {{> partial}}
   Don't uncomment yet -->
   <div>
-    <section data-id="{{listing.id}}">
+    <section class="listing-section" data-id="{{listing.id}}">
       <p> Id: {{listing.id}}
       <p> Address: {{listing.address}} </p>
       <p> Check-In: {{listing.start_date}} </p>
@@ -14,7 +14,7 @@
        {{log guest}}
 
        <div>
-         <section data-id="{{guest.id}}">
+         <section class="guest-section" data-id="{{guest.id}}">
        <p> Guest: Id: {{guest.id}} First Name: {{guest.first_name}} Last Name: {{guest.last_name}} </p>
 
      {{/each}}
