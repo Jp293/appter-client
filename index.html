@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Appter</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <h1>ApptEr</h1>
+      <h2>Finding you an apartment faster than a velociraptor 🦖</h2>
+
+  <div id="message" class="content"></div>
+
+  <form id="sign-up-form">
+    <legend>Sign Up</legend>
+    <input name="credentials[email]" type="text" placeholder="email">
+    <input name="credentials[password]" type="password" placeholder="password">
+    <input name="credentials[password_confirmation]" type="password" placeholder="password password confirmation">
+    <input type="submit">
+  </form>
+
+  <form id="sign-in-form">
+    <legend>Sign In</legend>
+    <input name="credentials[email]" type="text" placeholder="email">
+    <input name="credentials[password]" type="password" placeholder="password">
+    <input type="submit">
+  </form>
+
+  <form id="change-password-form" class="hidden">
+    <legend>Change Password </legend>
+    <input name="passwords[old]" type="password" placeholder="old password">
+    <input name="passwords[new]" type="password" placeholder="new password">
+    <input type="submit">
+  </form>
+
+  <br>
+    <button id='get-listings' class="hidden btn btn-default"> View Listing(s)</button>
+
+    <form id='create-listing' class="hidden">
+
+      <legend>Create Listing</legend>
+
+      <input name="listing[address]" type="text" placeholder="Address">
+      <input name="listing[start_date]" type="text" placeholder="Check-In">
+      <input name="listing[end_date]" type="text" placeholder="Check-Out">
+      <input name="listing[price_night]" type="number" placeholder="Price Per Night">
+      <input type="submit">
+
+    </form>
+
+    <br>
+
+    <form id='create-guest-form' class="hidden">
+
+      <legend>Create Guest</legend>
+
+      <input name="guest[listing_id]" type="text" placeholder="Listing Id">
+      <input name="guest[first_name]" type="text" placeholder="First Name">
+      <input name="guest[last_name]" type="text" placeholder="Last Name">
+      <input type="submit">
+
+    </form>
+
+    <br>
+
+    <button id="sign-out-button" class="hidden btn btn-default"> Sign Out </button>
+
+    <br>
+
+    <div class="container">
+
+   <figure></figure>
+
+    </div>
+
+    <br>
+
+  </body>
+
+</html>
