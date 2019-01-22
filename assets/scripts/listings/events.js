@@ -22,7 +22,7 @@ const onUpdateListing = (event) => {
   listingData.id = $(event.target).closest('.listing-section').data('id')
   api.updateListing(listingData)
     .then(ui.updateListingSuccess)
-    .then(() => onGetListing(event))
+    // .then(() => onGetListing(event))
     .catch(ui.failure)
 }
 const onDestroyListing = (event) => {
